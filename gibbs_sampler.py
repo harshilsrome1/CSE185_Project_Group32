@@ -1,6 +1,7 @@
 import sys 
 import random
 import numpy as np
+import math
 
 def gibbs_sampler(dna: list[str], k: int, t: int, n: int) -> list[str]:
     bestAnswers = []
