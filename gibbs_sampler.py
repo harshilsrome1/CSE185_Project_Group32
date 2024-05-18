@@ -1,7 +1,7 @@
 import sys 
 import random
 import numpy as np
-import math
+import math 
 
 def gibbs_sampler(dna: list[str], k: int, t: int, n: int) -> list[str]:
     bestAnswers = []
@@ -45,7 +45,6 @@ def gibbs_sampler(dna: list[str], k: int, t: int, n: int) -> list[str]:
         if(score(bestMotifs) < score(bestAnswers)):
             bestAnswers = bestMotifs;
     return(bestAnswers)
-    pass
 
 def profile(motifs) -> list[dict[str, float]]:
     answer = []
@@ -77,6 +76,8 @@ def rand(n: int) -> int:
 def score(motifs):
     score = 0
     size = len(motifs[0])
+    num = len(motifs)
+    
     for m in range(size):
         a = 0
         c = 0
