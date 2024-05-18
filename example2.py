@@ -1,0 +1,15 @@
+a = "CGCCCCTCTCGGGGGTGTTCAGTAAACGGCCA"
+b = "GGGCGAGGTATGTGTAAGTGCCAAGGTGCCAG"
+c = "TAGTACCGAGACCGAAAGAAGTATACAGGCGT"
+d = "TAGATCAAGTTTCAGGTGCACGTCGGTGAACC"
+e = "AATCCACCAGCTCCACGTGCAATGTTGGCCTA"
+
+dna = []
+dna.append(a)
+dna.append(b)
+dna.append(c)
+dna.append(d)
+dna.append(e)
+
+answer = gibbs_sampler(dna,8,5,100)
+print(answer)
