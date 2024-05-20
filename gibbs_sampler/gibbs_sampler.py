@@ -5,6 +5,7 @@ import math
 import argparse
 import datetime
 import pandas as pd
+from gibbs_sampler import gibbs_sampler
 
 def main():
 
