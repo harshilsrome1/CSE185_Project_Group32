@@ -7,7 +7,6 @@ import datetime
 import pandas as pd
 from gibbs_algorithm import gibbs_sampler as gibbs
 import utils as utils
-import pyfaidx
 
 def read_fasta(fasta_file):
     with open(fasta_file, 'r') as file:
