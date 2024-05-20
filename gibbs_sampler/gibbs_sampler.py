@@ -82,7 +82,17 @@ def main():
         amtRuns = repetitions
     else:
         myutils.ERROR("number of runs of algorithm is not specified")
-        
+
+    # run the algorithm 
+    log.write("Starting motif enrichment analysis...\n\n")
+
+    answer = gibbs_algorithm.gibbs_sampler(reffasta,kmerSize,numMotifs,amtRuns)
+    log.write("Done\n\n")
+
+    log.write(answer)
+
+if __name__ == '__main__':
+    main()
 
 #test1
 """
