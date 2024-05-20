@@ -87,7 +87,7 @@ def main():
     # run the algorithm 
     log.write("Starting motif enrichment analysis...\n\n")
 
-    answer = gibbs_algorithm.gibbs_sampler(reffasta,kmerSize,numMotifs,amtRuns)
+    answer = gibbs.gibbs_sampler(reffasta,kmerSize,numMotifs,amtRuns)
     log.write("Done\n\n")
 
     log.write(answer)
