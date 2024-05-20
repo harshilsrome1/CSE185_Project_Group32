@@ -67,6 +67,22 @@ def main():
     else:
         myutils.ERROR("please specify a fasta file")
 
+    if args.kmerSize is not None:
+        kSize = kmerSize
+    else:
+        myutils.ERROR("kmer size is not specified")
+
+    if args.randValue is not None:
+        numMotifs = randValue
+    else:
+        myutils.ERROR("number of motifs is not specified")
+
+    if args.repetitions is not None:
+        amtRuns = repetitions
+    else:
+        myutils.ERROR("number of runs of algorithm is not specified")
+        
+
 #test1
 a = "CGCCCCTCTCGGGGGTGTTCAGTAAACGGCCA"
 b = "GGGCGAGGTATGTGTAAGTGCCAAGGTGCCAG"
