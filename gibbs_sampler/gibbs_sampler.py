@@ -7,6 +7,7 @@ import datetime
 import pandas as pd
 from gibbs_sampler import gibbs_algorithm as gibbs
 from gibbs_sampler import utils as utils
+import pyfaidx
 
 def main():
 
@@ -58,30 +59,30 @@ def main():
     # load fasta file
     if args.fasta_ref is not None:
         if not os.path.exists(args.fasta_ref):
-            myutils.ERROR("{fasta} does not exist".format(fasta = args.fasta_ref))
+            utils.ERROR("{fasta} does not exist".format(fasta = args.fasta_ref))
         try:
             reffasta = pyfaidx.Fasta(args.fasta_ref)
         except Exception:
-            myutils.ERROR("please check fasta file format - see README.md for details")
+            utils.ERROR("please check fasta file format - see README.md for details")
         log.write("Using fasta: {fasta}".format(fasta = args.fasta_ref))
         log.write("\n")
     else:
-        myutils.ERROR("please specify a fasta file")
+        utils.ERROR("please specify a fasta file")
 
     if args.kmerSize is not None:
         kSize = kmerSize
     else:
-        myutils.ERROR("kmer size is not specified")
+        utils.ERROR("kmer size is not specified")
 
     if args.randValue is not None:
         numMotifs = randValue
     else:
-        myutils.ERROR("number of motifs is not specified")
+        utils.ERROR("number of motifs is not specified")
 
     if args.repetitions is not None:
         amtRuns = repetitions
     else:
-        myutils.ERROR("number of runs of algorithm is not specified")
+        utils.ERROR("number of runs of algorithm is not specified")
 
     # run the algorithm 
     log.write("Starting motif enrichment analysis...\n\n")
