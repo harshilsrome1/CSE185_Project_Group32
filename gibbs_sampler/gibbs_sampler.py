@@ -35,9 +35,9 @@ def main():
                         help="This is a fasta file containing all the set of sequences", \
                         metavar="FA FILE", type = str, required = True) 
     
-    parser.add_argument("kmerSize", help = "size of k-mer we want in motifs output", type = int, required = True)
-    parser.add_argument("randValue", help = "number of motifs outputted", type = int, required = True)
-    parser.add_argument("repetitions", help = "amount of times we want procedure to repeat", type = int, required = True)
+    parser.add_argument("kmerSize", help = "size of k-mer we want in motifs output", type = int)
+    parser.add_argument("randValue", help = "number of motifs outputted", type = int)
+    parser.add_argument("repetitions", help = "amount of times we want procedure to repeat", type = int)
 
     # Output
     parser.add_argument("-o", "--output", help="Output file path."\
