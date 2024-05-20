@@ -24,7 +24,7 @@ setup(
     packages=find_packages(),
     entry_points={
         "console_scripts": [
-            "gibbs_saimpler=gibbs_sampler.gibbs_sampler:main"
+            "gibbs=gibbs_sampler.gibbs_sampler:main"
         ],
     },
 )
