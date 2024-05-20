@@ -119,3 +119,8 @@ def stringProb(pattern: str, profile: list[dict[str, float]]):
             value = profile[l].get("T")
             percent *= value
     return percent
+
+def cat(fasta):
+    seqs = []
+    f = open(fasta, 'r')
+    
