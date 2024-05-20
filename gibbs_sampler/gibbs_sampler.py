@@ -5,7 +5,8 @@ import math
 import argparse
 import datetime
 import pandas as pd
-from gibbs_sampler import gibbs_algorithm
+from gibbs_sampler import gibbs_algorithm as gibbs
+from gibbs_sampler import utils as utils
 
 def main():
 
