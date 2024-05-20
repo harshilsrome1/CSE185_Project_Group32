@@ -126,12 +126,12 @@ def cat(fasta):
     seq = ""
     for line in f:
         line = line.strip() 
-        if line.startswith('>'):
-            if seq:
-                seqs.append((seq))
-                seq = ''
+        if line.startswith('A' | 'G' | 'T' | 'C'):
+            seq += line
+            seqs.append(seq)
+            seq = ''
         else:
-            seq += line 
+            None
     if seq:
         seqs.append(seq)
     return seqs
