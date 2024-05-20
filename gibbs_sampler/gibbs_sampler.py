@@ -138,7 +138,8 @@ dna.append(c)
 dna.append(d)
 dna.append(e)
 answer = gibbs_sampler(dna,8,5,100)
-print(answer)
+print(answer) 
+# Output for answer = ['TCTCGGGG', 'CCAAGGTG', 'TACAGGCG', 'TTCAGGTG', 'TCCACGTG']
 
 #test2
 dna2 = []
@@ -152,6 +153,7 @@ dna2.append("AATTGGCCAACGTAGGCGCGGCTTGGCATCTCGGTGTGTG")
 dna2.append("GGTTAAAAGGCGCATCTTACTCTTTTCGCTTTCAAAAAAA")
 answer2 = gibbs_sampler(dna2,6,8,100)
 print(answer2)
+# Output for answer2 = ['AATTGG', 'AACTGA', 'AATTGG', 'AAGTGT', 'AATTGG', 'AACTGT', 'AATTGG', 'AAAAGG']
 
 #test3
 dna3 = []
@@ -165,3 +167,4 @@ dna3.append("AAGCTTCCAACATCGTCTTGGCATCTCGGTGTGTTTAACC")
 dna3.append("AATTGAACATCTTACTCTTTTCGCTTTCAAAAAAAAGGCC")
 answer3 = gibbs_sampler(dna3,6,8,100)
 print(answer3)
+# Output for answer3 = ['ATTAAC', 'CATAAC', 'CTTAAC', 'GTTATG', 'GTTAAC', 'GCTAAC', 'TTTAAC', 'GCTTTC']
