@@ -1,10 +1,13 @@
+import random 
+from tqdm import tqdm
+
 def gibbs_sampler(dna: list[str], k: int, t: int, n: int) -> list[str]:
     bestAnswers = []
     for eachdna in dna:
         number = rand(len(eachdna)-k)
         first = eachdna[number:number+k]
         bestAnswers.append(first)
-    for j in range(1000):
+    for j in tqdm(range(1000)):
         motifs = []
         bestMotifs = []
         for eachdna in dna:
