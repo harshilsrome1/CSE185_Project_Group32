@@ -9,6 +9,20 @@ from gibbs_algorithm import gibbs_sampler as gibbs
 import utils as utils
 import pyfaidx
 
+def read_fasta(fasta_file):
+    with open(fasta_file, 'r') as file:
+        seqs, current_seq = [], []
+        for line in file:
+            if line.startswith('>'):
+                if current_seq:
+                    seqs.append(''.join(current_seq))
+                    current_seq = []
+            else:
+                current_seq.append(line.strip())
+        if current_seq:
+            seqs.append(''.join(current_seq))
+    return seqs
+    
 def main():
 
     # Command Line Stuff
@@ -61,7 +75,7 @@ def main():
         if not os.path.exists(args.fasta_ref):
             utils.ERROR("{fasta} does not exist".format(fasta = args.fasta_ref))
         try:
-            reffasta = pyfaidx.Fasta(args.fasta_ref)
+            reffasta = read_fasta(args.fasta_ref)
         except Exception:
             utils.ERROR("please check fasta file format - see README.md for details")
         log.write("Using fasta: {fasta}".format(fasta = args.fasta_ref))
