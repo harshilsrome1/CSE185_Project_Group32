@@ -2,7 +2,70 @@ import sys
 import random
 import numpy as np
 import math 
+import argparse
+import datetime
+import pandas as pd
 
+def main():
+
+    # Command Line Stuff
+    parser = argparse.ArgumentParser(
+        prog = "gibbs_sampler",
+        description = "Command-line script to find shared motifs from a set of sequences"
+    )
+
+    # input arguments 
+    parser.add_argument("fasta_ref",\
+                        help="This is a fasta file containing all the set of sequences", \
+                        metavar="FA FILE", type = str, required = True) 
+    
+    parser.add_argument("kmerSize", help = "size of k-mer we want in motifs output", type = int, required = True)
+    parser.add_argument("randValue", help = "number of motifs outputted", type = int, required = True)
+    parser.add_argument("repetitions", help = "amount of times we want procedure to repeat", type = int, required = True)
+
+    # Output
+    parser.add_argument("-o", "--output", help="Output file path."\
+                        "This file will be overwritten if it already exists."\
+                        "Default: stdout", metavar="FILE", type = str, required=False)
+    parser.add_argument("-l", "--log", help = "write log to file. Default: stdout", metavar = "FILE", type = str, required = False)
+
+
+    args = parser.parse_args()
+
+    # output file set-up
+    if args.output is None:
+        outf = sys.stdout
+    else:
+        outf = open(args.output, "w")
+
+    # set up log file
+    if args.log is None:
+        log = sys.stdout
+    else:
+        log = open(args.log, "w")
+
+    log.write("Welcome to the motif finding tool!\n")
+    log.write("Start time: ")
+    log.write(str(datetime.datetime.now()))
+    log.write("\n\n")
+
+    # leading input files
+
+    log.write("Loading input files:\n")
+
+    # load fasta file
+    if args.fasta_ref is not None:
+        if not os.path.exists(args.fasta_ref):
+            myutils.ERROR("{fasta} does not exist".format(fasta = args.fasta_ref))
+        try:
+            reffasta = pyfaidx.Fasta(args.fasta_ref)
+        except Exception:
+            myutils.ERROR("please check fasta file format - see README.md for details")
+        log.write("Using fasta: {fasta}".format(fasta = args.fasta_ref))
+        log.write("\n")
+    else:
+        myutils.ERROR("please specify a fasta file")
+    
 def gibbs_sampler(dna: list[str], k: int, t: int, n: int) -> list[str]:
     bestAnswers = []
     for eachdna in dna:
