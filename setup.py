@@ -20,7 +20,7 @@ setup(
     name='gibbs_sampler',
     version=VERSION,
     description='CSE 185 Final Project',
-    author='Harshil Shah, Sivagunalan Thamliasaran',
+    author='Harshil Shah, Sivagunalan Thamilasaran',
     packages=find_packages(),
     entry_points={
         "console_scripts": [
