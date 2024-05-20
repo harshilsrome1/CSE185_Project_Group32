@@ -5,8 +5,8 @@ import math
 import argparse
 import datetime
 import pandas as pd
-from gibbs_sampler import gibbs_algorithm as gibbs
-from gibbs_sampler import utils as utils
+from gibbs_algorithm import gibbs_sampler as gibbs
+import utils as utils
 import pyfaidx
 
 def main():
