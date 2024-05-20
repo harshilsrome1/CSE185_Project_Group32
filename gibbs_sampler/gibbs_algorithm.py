@@ -123,4 +123,16 @@ def stringProb(pattern: str, profile: list[dict[str, float]]):
 def cat(fasta):
     seqs = []
     f = open(fasta, 'r')
+    seq = ""
+    for line in f:
+        line = line.strip() 
+        if line.startswith('>'):
+            if seq:
+                seqs.append((seq))
+                seq = ''
+        else:
+            seq += line 
+    if seq:
+        seqs.append(seq)
+    return seqs
     
