@@ -47,7 +47,7 @@ def main():
         seqs = read_fasta(args.fasta_ref)
 
         log.write("Using fasta: {}\n".format(args.fasta_ref))
-        log.write("Starting motif enrichment analysis...\n\n")
+        log.write("Starting analysis, looking for motifs...\n\n")
         
         answer = gibbs(seqs, args.kmerSize, args.randValue, args.repetitions)
         log.write("Done\n")
