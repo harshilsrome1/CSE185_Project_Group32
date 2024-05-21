@@ -123,19 +123,5 @@ def stringProb(pattern: str, profile: list[dict[str, float]]):
             percent *= value
     return percent
 
-def cat(fasta):
-    seqs = []
-    f = open(fasta, 'r')
-    seq = ""
-    for line in f:
-        line = line.strip() 
-        if line.startswith('A' | 'G' | 'T' | 'C'):
-            seq += line
-            seqs.append(seq)
-            seq = ''
-        else:
-            None
-    if seq:
-        seqs.append(seq)
-    return seqs
+
     
