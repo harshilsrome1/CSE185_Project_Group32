@@ -50,8 +50,9 @@ def main():
         log.write("Starting motif enrichment analysis...\n\n")
         
         answer = gibbs(seqs, args.kmerSize, args.randValue, args.repetitions)
-        log.write("Done\n\n")
+        log.write("Done\n")
         log.write(str(answer))  # Ensure that 'answer' is converted to string if not already
+        log.write("\n")
         
     finally:
         if log is not sys.stdout:
