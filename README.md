@@ -11,7 +11,18 @@ The Gibbs Sampler Motif Finding Tool is a command-line Python application design
 - NumPy (optional)
 
 ### Setup
-Clone this repository to your local machine using: 
+
+# Change to the desired directory
+cd path/to/your/folder
+
+# Clone the repository
+git clone https://github.com/harshilrome1/CSE185_Project_Group32.git
+
+# Change directory into the cloned repository
+cd CSE185_Project_Group32
+
+# List the files in the directory to make sure all files have been cloned
+ls
 
 
 ## Usage
