@@ -19,7 +19,7 @@ cd path/to/your/folder
 
 #### Clone the repository
 ```
-git clone https://github.com/harshilrome1/CSE185_Project_Group32.git
+git clone https://github.com/harshilsrome1/CSE185_Project_Group32
 ```
 
 #### Change directory into the cloned repository
