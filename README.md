@@ -12,18 +12,17 @@ The Gibbs Sampler Motif Finding Tool is a command-line Python application design
 
 ### Setup
 
-# Change to the desired directory
+#### Change to the desired directory
 cd path/to/your/folder
 
-# Clone the repository
+#### Clone the repository
 git clone https://github.com/harshilrome1/CSE185_Project_Group32.git
 
-# Change directory into the cloned repository
+#### Change directory into the cloned repository
 cd CSE185_Project_Group32
 
-# List the files in the directory to make sure all files have been cloned
+#### List the files in the directory to make sure all files have been cloned
 ls
-
 
 ## Usage
 To run the Gibbs Sampler, you need to provide a file containing DNA sequences. You will also need to specify the motif length (k), the number of sequences (t), and the number of iterations (n).
