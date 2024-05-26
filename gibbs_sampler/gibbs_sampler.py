@@ -20,9 +20,7 @@ def read_fasta(fasta_file):
     return seqs
 
 def main():
-    #benchmarking purposes
-    start_time = time.time()
-    
+    #benchmarking purposes    
     parser = argparse.ArgumentParser(
         prog="gibbs_sampler",
         description="Command-line script to find shared motifs from a set of sequences"
@@ -42,7 +40,8 @@ def main():
 
     try:
         log.write("Welcome to the motif finding tool!\n")
-        log.write("Start time: {}\n\n".format(datetime.datetime.now()))
+        start_time = time.time()
+        log.write("Start time: {}\n".format(start_time)
 
         if not os.path.exists(args.fasta_ref):
             log.write("{} does not exist".format(args.fasta_ref))
@@ -69,7 +68,7 @@ def main():
     #benchmarking results
     time_taken = time.time() - start_time
     print(time_taken)
-    log.write("My program took", str(time_taken), "to run")
+    log.write("Program running: {}\n".format(time_taken)
 
 if __name__ == '__main__':
     main()
