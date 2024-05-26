@@ -68,7 +68,7 @@ def main():
     #benchmarking results
     time_taken = time.time() - start_time
     print(time_taken)
-    log.write("Program running: {}\n".format(time_taken)
+    log.write("Program running: {}\n".format(time_taken))
 
 if __name__ == '__main__':
     main()
