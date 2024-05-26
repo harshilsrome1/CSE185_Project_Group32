@@ -3,6 +3,7 @@ import os
 import datetime
 import argparse
 from gibbs_algorithm import gibbs_sampler as gibbs
+import time
 
 def read_fasta(fasta_file):
     with open(fasta_file, 'r') as file:
@@ -19,6 +20,9 @@ def read_fasta(fasta_file):
     return seqs
 
 def main():
+    #benchmarking purposes
+    start_time = time.time()
+    
     parser = argparse.ArgumentParser(
         prog="gibbs_sampler",
         description="Command-line script to find shared motifs from a set of sequences"
@@ -61,6 +65,8 @@ def main():
     if args.output:
         with open(args.output, "w") as outf:
             outf.write(str(answer))  # Ensure that 'answer' is converted to string if not already
+
+    log.write("My program took", time.time() - start_time, "to run")
 
 if __name__ == '__main__':
     main()
