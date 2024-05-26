@@ -41,7 +41,7 @@ def main():
     try:
         log.write("Welcome to the motif finding tool!\n")
         start_time = time.time()
-        log.write("Start time: {}\n".format(start_time)
+        log.write("Start time: {}\n".format(start_time))
 
         if not os.path.exists(args.fasta_ref):
             log.write("{} does not exist".format(args.fasta_ref))
