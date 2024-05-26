@@ -66,7 +66,10 @@ def main():
         with open(args.output, "w") as outf:
             outf.write(str(answer))  # Ensure that 'answer' is converted to string if not already
 
-    log.write("My program took", time.time() - start_time, "to run")
+    #benchmarking results
+    time_taken = time.time() - start_time
+    print(time_taken)
+    log.write("My program took", str(time_taken), "to run")
 
 if __name__ == '__main__':
     main()
