@@ -17,6 +17,7 @@ def read_fasta(fasta_file):
                 current_seq.append(line.strip())
         if current_seq:
             seqs.append(''.join(current_seq))
+    print(seqs)
     return seqs
 
 def main():
