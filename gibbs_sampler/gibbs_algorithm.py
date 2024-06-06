@@ -10,7 +10,7 @@ def gibbs_sampler(dna: list[str], k: int, t: int, n: int) -> list[str]:
         first = eachdna[number:number+k]
         bestAnswers.append(first)
     #this for loop iterates 1000 times, replacing a random motif each time and checking if score improved 
-    for j in tqdm(range(1000)):
+    for j in tqdm(range(n)):
         motifs = []
         bestMotifs = []
         for eachdna in dna:
