@@ -40,4 +40,12 @@ To run the Gibbs Sampler, you need to provide a file containing DNA sequences. Y
 - `-t, --num_sequences`: Number of sequences to use.
 - `-n, --iterations`: Number of iterations for the Gibbs sampler.
 
+### Running the program
+```
+python gibbs_sampler.py --file -k -t -n
+```
+Example command
+```
+python gibbs_sampler.py example2.fasta 10 17 1000
+```
 
